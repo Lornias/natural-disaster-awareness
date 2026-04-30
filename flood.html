@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flood | Natural Disaster Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background:linear-gradient(135deg,#0a2a43,#0f3460,#1b4965,#0d3b66);
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,119,182,0.3));
+}
+
+.hero h1{
+font-size:48px;
+}
+
+/* NAV */
+nav{
+text-align:center;
+padding:15px;
+background:rgba(255,255,255,0.06);
+}
+
+nav a{
+color:#00e5ff;
+text-decoration:none;
+font-size:18px;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* SECTION TITLE */
+.section-title{
+color:#00e5ff;
+margin-top:40px;
+}
+
+/* IMAGE ROW */
+.image-row{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.image-row img{
+width:300px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.image-row img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00e5ff;
+}
+
+/* INFO BOX */
+.info-box{
+background:rgba(255,255,255,0.07);
+padding:25px;
+border-radius:15px;
+margin-top:30px;
+border-left:4px solid #00e5ff;
+}
+
+/* FLOOD GRID */
+.flood-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+/* FLOOD CARD */
+.flood-card{
+background:rgba(0,0,0,0.35);
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.flood-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #00e5ff;
+}
+
+.flood-card h3{
+color:#00e5ff;
+}
+
+/* BUTTON */
+.safety-btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 30px;
+background:#00e5ff;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+.safety-btn:hover{
+background:#90e0ef;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.6);
+margin-top:40px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>Flood Disaster</h1>
+<p>Understanding flood risks and real disasters in Turkey</p>
+</div>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="container">
+
+<h2 class="section-title">Flood Damage Examples</h2>
+
+<div class="image-row">
+<img src="resimler/sel.jpg">
+<img src="resimler/flood2.jpg">
+<img src="resimler/flood3.jpg">
+</div>
+
+<div class="info-box">
+<p>
+Floods occur when water covers normally dry land. They can destroy cities,
+homes, and infrastructure within minutes and cause major loss of life.
+</p>
+</div>
+
+<h2 class="section-title">Major Floods in Turkey</h2>
+
+<div class="flood-grid">
+
+<div class="flood-card">
+<h3>2021 Kastamonu Flood</h3>
+<p>
+Over 80 people died. Entire districts were destroyed by extreme rainfall.
+</p>
+</div>
+
+<div class="flood-card">
+<h3>2009 Istanbul Flood</h3>
+<p>
+Urban flooding killed over 30 people and caused massive damage.
+</p>
+</div>
+
+<div class="flood-card">
+<h3>2023 Şanlıurfa Flood</h3>
+<p>
+Extreme rainfall flooded streets and caused deadly destruction.
+</p>
+</div>
+
+</div>
+
+<div style="text-align:center;">
+<a href="floodsafety.html" class="safety-btn">
+Learn Safety Measures →
+</a>
+</div>
+
+</div>
+
+<footer>
+Natural Disaster Awareness Project
+</footer>
+
+</body>
+</html>

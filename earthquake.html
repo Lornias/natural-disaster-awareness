@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Earthquake | Natural Disaster Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+
+/* EARTHQUAKE THEME BACKGROUND */
+background:
+linear-gradient(135deg,#1f1f1f,#2a2a2a,#3a3a3a,#1c2833);
+
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(to right,rgba(0,0,0,0.7),rgba(50,50,50,0.4));
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:2px;
+}
+
+.hero p{
+opacity:0.8;
+}
+
+/* NAV */
+nav{
+text-align:center;
+padding:15px;
+background:rgba(255,255,255,0.05);
+}
+
+nav a{
+color:#4fc3f7;
+text-decoration:none;
+font-size:18px;
+}
+
+nav a:hover{
+color:#81d4fa;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* IMAGE ROW */
+.image-row{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.image-row img{
+width:300px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.image-row img:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #4fc3f7;
+}
+
+/* INFO BOX */
+.info-box{
+background:rgba(255,255,255,0.06);
+padding:25px;
+border-radius:20px;
+margin-top:30px;
+border-left:4px solid #4fc3f7;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(0,0,0,0.4);
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #4fc3f7;
+}
+
+.card h3{
+color:#4fc3f7;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 30px;
+background:#4fc3f7;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#81d4fa;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.6);
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>Earthquake Disaster</h1>
+<p>Learn real earthquakes in Turkey and safety information</p>
+</div>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="container">
+
+<div class="image-row">
+<img src="resimler/earthquake2.jpg">
+<img src="resimler/earthquake3.webp">
+<img src="resimler/earthquake4.jpg">
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>2023 Hatay Earthquake</h3>
+<p>
+Magnitude 7.8 earthquake killed over 50,000 people.
+Millions became homeless.
+One of the deadliest disasters in Turkey.
+</p>
+</div>
+
+<div class="card">
+<h3>1999 Marmara Earthquake</h3>
+<p>
+Magnitude 7.4 earthquake killed over 17,000 people.
+Changed Turkey’s building safety regulations forever.
+</p>
+</div>
+
+</div>
+
+<div style="text-align:center;">
+<a href="earthquakesafety.html" class="btn">
+Learn Safety Measures →
+</a>
+</div>
+
+</div>
+
+<footer>
+Natural Disaster Awareness Project
+</footer>
+
+</body>
+</html>

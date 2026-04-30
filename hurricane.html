@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hurricane | Natural Disaster Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,0.3));
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+opacity:0.8;
+}
+
+/* NAV */
+nav{
+text-align:center;
+padding:15px;
+background:rgba(255,255,255,0.08);
+}
+
+nav a{
+color:#00e5ff;
+text-decoration:none;
+font-size:18px;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* IMAGES */
+.image-row{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.image-box{
+width:300px;
+}
+
+.image-box img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.image-box img:hover{
+transform:scale(1.05);
+}
+
+/* IMAGE DESCRIPTION BOX */
+.image-desc{
+background:rgba(0,0,0,0.4);
+padding:15px;
+border-radius:12px;
+margin-top:10px;
+font-size:14px;
+}
+
+/* SECTION TITLE */
+.section-title{
+margin-top:60px;
+font-size:28px;
+color:#00e5ff;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(0,0,0,0.4);
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px cyan;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 30px;
+background:#00e5ff;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.6);
+margin-top:40px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>Hurricane (Medicane) Disaster</h1>
+<p>Powerful storm systems with strong wind and heavy rainfall</p>
+</div>
+
+<nav>
+<a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="container">
+
+<h2>Hurricane Damage Examples</h2>
+
+<div class="image-row">
+
+<div class="image-box">
+<img src="resimler/hurricane.jpg">
+<div class="image-desc">
+Strong winds damaging coastal buildings.
+</div>
+</div>
+
+<div class="image-box">
+<img src="resimler/hurricane2.webp">
+<div class="image-desc">
+Heavy rainfall causing severe flooding.
+</div>
+</div>
+
+<div class="image-box">
+<img src="resimler/hurricane3.jpg">
+<div class="image-desc">
+Storm surge affecting seaside towns.
+</div>
+</div>
+
+</div>
+
+
+<h2 class="section-title">Hurricane-Like Storms in Turkey (Medicanes)</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>2018 Medicane – Zorbas</h3>
+<p>
+Affected the Mediterranean region.
+Caused heavy rain, flooding and strong winds
+in southern Turkey.
+</p>
+</div>
+
+<div class="card">
+<h3>2020 Medicane – Ianos</h3>
+<p>
+Impacted the Aegean Sea.
+Brought intense rainfall and storm damage
+to western coastal areas.
+</p>
+</div>
+
+<div class="card">
+<h3>2023 Mediterranean Storm</h3>
+<p>
+Severe storm system brought extreme rainfall
+to southern Turkey.
+Led to flooding and infrastructure damage.
+</p>
+</div>
+
+</div>
+
+<div style="text-align:center;">
+<a href="hurricanesafety.html" class="btn">
+Learn Safety Measures →
+</a>
+</div>
+
+</div>
+
+<footer>
+Natural Disaster Awareness Project
+</footer>
+
+</body>
+</html>
