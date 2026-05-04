@@ -3,53 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <title>Natural Disaster Awareness</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-
-
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
-
-
 background:
 radial-gradient(circle at 20% 30%, rgba(60,80,120,0.25), transparent 40%),
 radial-gradient(circle at 80% 70%, rgba(40,60,90,0.25), transparent 40%),
 linear-gradient(180deg, #0b0e13, #0f141b);
-
 color:#eaeaea;
 min-height:100vh;
 }
 
-/* ===== HEADER ===== */
+.topbar{
+display:flex;
+justify-content:flex-end;
+padding:18px 30px;
+}
+
+select{
+padding:10px 14px;
+border-radius:10px;
+border:none;
+font-family:'Poppins', sans-serif;
+background:#ffffff;
+color:#111;
+}
 
 header{
 text-align:center;
-padding:90px 20px 60px 20px;
+padding:60px 20px 35px 20px;
 }
 
 header h1{
 font-size:50px;
-font-weight:600;
+font-weight:700;
 margin-bottom:12px;
 letter-spacing:1px;
 }
 
 header p{
 font-size:18px;
-opacity:0.6;
+opacity:0.7;
 }
 
-/* ===== CONTAINER ===== */
+.hero-actions{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.main-btn{
+display:inline-block;
+padding:15px 26px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.map-btn{
+background:#00e5ff;
+color:#061018;
+}
+
+.qr-btn{
+background:#20c997;
+color:#061018;
+}
+
+.main-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,229,255,0.25);
+}
+
+.info-section{
+max-width:1100px;
+margin:20px auto 50px auto;
+padding:0 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.info-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.info-card h2{
+margin-top:0;
+color:#00e5ff;
+font-size:24px;
+}
+
+.info-card ul{
+padding-left:20px;
+line-height:1.8;
+}
+
+.info-card li{
+margin-bottom:8px;
+}
+
+.emergency-number{
+font-size:22px;
+font-weight:700;
+color:#ff4d4d;
+}
+
+.safe-message{
+text-align:center;
+max-width:900px;
+margin:30px auto;
+padding:25px;
+border-radius:20px;
+background:linear-gradient(90deg,rgba(0,229,255,0.18),rgba(32,201,151,0.18));
+border:1px solid rgba(255,255,255,0.12);
+}
+
+.safe-message h2{
+margin:0;
+font-size:34px;
+color:#ffffff;
+}
+
+.safe-message p{
+opacity:0.75;
+}
 
 .container{
 padding:20px 20px 80px 20px;
 }
-
-/* ===== GRID (2x2 centered) ===== */
 
 .grid{
 display:grid;
@@ -58,8 +152,6 @@ gap:35px;
 max-width:750px;
 margin:auto;
 }
-
-/* ===== CARD ===== */
 
 .card{
 position:relative;
@@ -73,8 +165,6 @@ transition:0.4s ease;
 box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ===== IMAGE ===== */
-
 .card img{
 width:100%;
 height:100%;
@@ -82,8 +172,6 @@ object-fit:cover;
 transition:0.5s;
 opacity:0.85;
 }
-
-/* ===== OVERLAY ===== */
 
 .overlay{
 position:absolute;
@@ -100,23 +188,17 @@ opacity:0;
 transition:0.4s ease;
 }
 
-/* ===== TITLE ===== */
-
 .title{
 font-size:24px;
-font-weight:500;
+font-weight:600;
 margin-bottom:8px;
 }
 
-/* ===== EXPLORE TEXT ===== */
-
 .btn{
 font-size:14px;
-opacity:0.7;
+opacity:0.75;
 transition:0.3s;
 }
-
-/* ===== HOVER ===== */
 
 .card:hover{
 transform:translateY(-6px);
@@ -136,29 +218,88 @@ opacity:1;
 opacity:1;
 }
 
-/* ===== FOOTER ===== */
-
 footer{
 text-align:center;
 padding:40px 20px;
 font-size:14px;
-opacity:0.4;
+opacity:0.6;
 }
 
 @media (max-width:700px){
+header h1{
+font-size:36px;
+}
 .grid{
 grid-template-columns:1fr;
 }
+.safe-message h2{
+font-size:26px;
 }
-
+}
 </style>
 </head>
+
 <body>
 
+<div class="topbar">
+<select id="languageSelect" onchange="changeLanguage(this.value)">
+<option value="en">🇬🇧 English</option>
+<option value="tr">🇹🇷 Türkçe</option>
+<option value="ar">🇸🇦 العربية</option>
+</select>
+</div>
+
 <header>
-<h1>Natural Disaster Awareness</h1>
-<p>Understanding risks. Learning from real events. Staying prepared.</p>
+<h1 id="mainTitle">Natural Disaster Awareness</h1>
+<p id="mainSubtitle">Understanding risks. Learning from real events. Staying prepared.</p>
+
+<div class="hero-actions">
+<a id="mapButton" class="main-btn map-btn" href="https://lornias.github.io/disaster-assembly-map/" target="_blank">
+Find Nearest Safe Area →
+</a>
+
+<a id="qrButton" class="main-btn qr-btn" href="https://lornias.github.io/disaster-assembly-map/" target="_blank">
+QR Emergency Access →
+</a>
+</div>
 </header>
+
+<section class="safe-message">
+<h2 id="safeTitle">BE PREPARED, STAY SAFE!</h2>
+<p id="safeText">A fast, multilingual guidance system for foreign visitors during disasters in Turkey.</p>
+</section>
+
+<section class="info-section">
+
+<div class="info-card">
+<h2 id="stepsTitle">What Should You Do?</h2>
+<ul>
+<li id="step1">Call 112 in emergencies.</li>
+<li id="step2">Move to a safe place.</li>
+<li id="step3">Follow official instructions.</li>
+<li id="step4">Get and share reliable information.</li>
+<li id="step5">Ask for help if needed.</li>
+</ul>
+</div>
+
+<div class="info-card">
+<h2 id="numbersTitle">Important Emergency Numbers</h2>
+<p><span class="emergency-number">112</span> - <span id="num1">Emergency / Ambulance</span></p>
+<p><span class="emergency-number">110</span> - <span id="num2">Fire Department</span></p>
+<p><span class="emergency-number">156</span> - <span id="num3">Gendarmerie</span></p>
+</div>
+
+<div class="info-card">
+<h2 id="efficiencyTitle">System Efficiency</h2>
+<ul>
+<li id="eff1">QR access helps users reach information faster.</li>
+<li id="eff2">Location-based map shows nearby assembly areas.</li>
+<li id="eff3">Multilingual support reduces language barriers.</li>
+<li id="eff4">Designed to support faster decision-making.</li>
+</ul>
+</div>
+
+</section>
 
 <div class="container">
 <div class="grid">
@@ -166,41 +307,154 @@ grid-template-columns:1fr;
 <a href="earthquake.html" class="card">
 <img src="resimler/marrakesh-city-after-earthquake_23-2150811913.avif">
 <div class="overlay">
-<div class="title">Earthquake</div>
-<div class="btn">Explore →</div>
+<div class="title" id="earthquakeTitle">Earthquake</div>
+<div class="btn" id="explore1">Explore →</div>
 </div>
 </a>
 
 <a href="flood.html" class="card">
 <img src="resimler/sel.jpg">
 <div class="overlay">
-<div class="title">Flood</div>
-<div class="btn">Explore →</div>
+<div class="title" id="floodTitle">Flood</div>
+<div class="btn" id="explore2">Explore →</div>
 </div>
 </a>
 
 <a href="hurricane.html" class="card">
 <img src="resimler/hurricane.jpg">
 <div class="overlay">
-<div class="title">Hurricane</div>
-<div class="btn">Explore →</div>
+<div class="title" id="hurricaneTitle">Hurricane</div>
+<div class="btn" id="explore3">Explore →</div>
 </div>
 </a>
 
 <a href="wildfire.html" class="card">
 <img src="resimler/wildfire1.jpg">
 <div class="overlay">
-<div class="title">Wildfire</div>
-<div class="btn">Explore →</div>
+<div class="title" id="wildfireTitle">Wildfire</div>
+<div class="btn" id="explore4">Explore →</div>
 </div>
 </a>
 
 </div>
 </div>
 
-<footer>
-Natural Disaster Awareness Project
+<footer id="footerText">
+Natural Disaster Awareness Project • Be Prepared, Stay Safe
 </footer>
+
+<script>
+const translations = {
+en: {
+mainTitle: "Natural Disaster Awareness",
+mainSubtitle: "Understanding risks. Learning from real events. Staying prepared.",
+mapButton: "Find Nearest Safe Area →",
+qrButton: "QR Emergency Access →",
+safeTitle: "BE PREPARED, STAY SAFE!",
+safeText: "A fast, multilingual guidance system for foreign visitors during disasters in Turkey.",
+stepsTitle: "What Should You Do?",
+step1: "Call 112 in emergencies.",
+step2: "Move to a safe place.",
+step3: "Follow official instructions.",
+step4: "Get and share reliable information.",
+step5: "Ask for help if needed.",
+numbersTitle: "Important Emergency Numbers",
+num1: "Emergency / Ambulance",
+num2: "Fire Department",
+num3: "Gendarmerie",
+efficiencyTitle: "System Efficiency",
+eff1: "QR access helps users reach information faster.",
+eff2: "Location-based map shows nearby assembly areas.",
+eff3: "Multilingual support reduces language barriers.",
+eff4: "Designed to support faster decision-making.",
+earthquakeTitle: "Earthquake",
+floodTitle: "Flood",
+hurricaneTitle: "Hurricane",
+wildfireTitle: "Wildfire",
+explore: "Explore →",
+footerText: "Natural Disaster Awareness Project • Be Prepared, Stay Safe"
+},
+
+tr: {
+mainTitle: "Doğal Afet Farkındalığı",
+mainSubtitle: "Riskleri anla. Gerçek olaylardan öğren. Hazırlıklı kal.",
+mapButton: "En Yakın Güvenli Alanı Bul →",
+qrButton: "QR ile Acil Erişim →",
+safeTitle: "HAZIR OL, GÜVENDE KAL!",
+safeText: "Türkiye’deki yabancı ziyaretçiler için hızlı ve çok dilli afet rehber sistemi.",
+stepsTitle: "Ne Yapmalısın?",
+step1: "Acil durumda 112’yi ara.",
+step2: "Güvenli bir yere geç.",
+step3: "Resmi talimatları takip et.",
+step4: "Güvenilir bilgi al ve paylaş.",
+step5: "Yardıma ihtiyacın varsa bildir.",
+numbersTitle: "Önemli Acil Numaralar",
+num1: "Acil Yardım / Ambulans",
+num2: "İtfaiye",
+num3: "Jandarma",
+efficiencyTitle: "Sistem Verimi",
+eff1: "QR erişimi bilgiye daha hızlı ulaşmayı sağlar.",
+eff2: "Konum tabanlı harita en yakın toplanma alanlarını gösterir.",
+eff3: "Çok dilli destek dil bariyerini azaltır.",
+eff4: "Kriz anında daha hızlı karar vermeyi destekler.",
+earthquakeTitle: "Deprem",
+floodTitle: "Sel",
+hurricaneTitle: "Fırtına",
+wildfireTitle: "Yangın",
+explore: "İncele →",
+footerText: "Doğal Afet Farkındalığı Projesi • Hazır Ol, Güvende Kal"
+},
+
+ar: {
+mainTitle: "التوعية بالكوارث الطبيعية",
+mainSubtitle: "افهم المخاطر. تعلم من الأحداث الحقيقية. كن مستعدًا.",
+mapButton: "ابحث عن أقرب منطقة آمنة →",
+qrButton: "وصول طارئ عبر QR →",
+safeTitle: "كن مستعدًا، ابقَ آمنًا!",
+safeText: "نظام إرشاد سريع ومتعدد اللغات للزوار الأجانب أثناء الكوارث في تركيا.",
+stepsTitle: "ماذا يجب أن تفعل؟",
+step1: "اتصل بالرقم 112 في حالات الطوارئ.",
+step2: "انتقل إلى مكان آمن.",
+step3: "اتبع التعليمات الرسمية.",
+step4: "احصل على معلومات موثوقة وشاركها.",
+step5: "اطلب المساعدة عند الحاجة.",
+numbersTitle: "أرقام الطوارئ المهمة",
+num1: "الطوارئ / الإسعاف",
+num2: "الإطفاء",
+num3: "الدرك",
+efficiencyTitle: "كفاءة النظام",
+eff1: "يساعد رمز QR المستخدمين على الوصول إلى المعلومات بسرعة.",
+eff2: "تعرض الخريطة المعتمدة على الموقع أقرب مناطق التجمع.",
+eff3: "الدعم متعدد اللغات يقلل حاجز اللغة.",
+eff4: "مصمم لدعم اتخاذ القرار بسرعة أثناء الأزمة.",
+earthquakeTitle: "زلزال",
+floodTitle: "فيضان",
+hurricaneTitle: "عاصفة",
+wildfireTitle: "حريق غابات",
+explore: "استكشف →",
+footerText: "مشروع التوعية بالكوارث الطبيعية • كن مستعدًا، ابقَ آمنًا"
+}
+};
+
+function changeLanguage(lang){
+const t = translations[lang];
+
+document.documentElement.lang = lang;
+document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+for(const key in t){
+const element = document.getElementById(key);
+if(element){
+element.innerText = t[key];
+}
+}
+
+document.getElementById("explore1").innerText = t.explore;
+document.getElementById("explore2").innerText = t.explore;
+document.getElementById("explore3").innerText = t.explore;
+document.getElementById("explore4").innerText = t.explore;
+}
+</script>
 
 </body>
 </html>
