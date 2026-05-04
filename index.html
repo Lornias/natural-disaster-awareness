@@ -55,32 +55,69 @@ opacity:0.7;
 margin-top:30px;
 display:flex;
 justify-content:center;
-gap:15px;
-flex-wrap:wrap;
+align-items:center;
+flex-direction:column;
+gap:20px;
 }
 
 .main-btn{
 display:inline-block;
-padding:15px 26px;
+padding:15px 30px;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
 transition:0.3s;
-}
-
-.map-btn{
 background:#00e5ff;
-color:#061018;
-}
-
-.qr-btn{
-background:#20c997;
 color:#061018;
 }
 
 .main-btn:hover{
 transform:translateY(-4px);
 box-shadow:0 10px 25px rgba(0,229,255,0.25);
+}
+
+.qr-box{
+text-align:center;
+margin-top:5px;
+}
+
+.qr-box p{
+opacity:0.7;
+margin-bottom:12px;
+font-size:16px;
+}
+
+.qr-box img{
+width:140px;
+border-radius:12px;
+background:white;
+padding:8px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.qr-box img:hover{
+transform:scale(1.06);
+}
+
+.safe-message{
+text-align:center;
+max-width:900px;
+margin:40px auto 30px auto;
+padding:25px;
+border-radius:20px;
+background:linear-gradient(90deg,rgba(0,229,255,0.18),rgba(32,201,151,0.18));
+border:1px solid rgba(255,255,255,0.12);
+}
+
+.safe-message h2{
+margin:0;
+font-size:34px;
+color:#ffffff;
+}
+
+.safe-message p{
+opacity:0.75;
 }
 
 .info-section{
@@ -119,26 +156,6 @@ margin-bottom:8px;
 font-size:22px;
 font-weight:700;
 color:#ff4d4d;
-}
-
-.safe-message{
-text-align:center;
-max-width:900px;
-margin:30px auto;
-padding:25px;
-border-radius:20px;
-background:linear-gradient(90deg,rgba(0,229,255,0.18),rgba(32,201,151,0.18));
-border:1px solid rgba(255,255,255,0.12);
-}
-
-.safe-message h2{
-margin:0;
-font-size:34px;
-color:#ffffff;
-}
-
-.safe-message p{
-opacity:0.75;
 }
 
 .container{
@@ -229,11 +246,17 @@ opacity:0.6;
 header h1{
 font-size:36px;
 }
+
 .grid{
 grid-template-columns:1fr;
 }
+
 .safe-message h2{
 font-size:26px;
+}
+
+.qr-box img{
+width:120px;
 }
 }
 </style>
@@ -254,13 +277,14 @@ font-size:26px;
 <p id="mainSubtitle">Understanding risks. Learning from real events. Staying prepared.</p>
 
 <div class="hero-actions">
-<a id="mapButton" class="main-btn map-btn" href="https://lornias.github.io/disaster-assembly-map/" target="_blank">
+<a id="mapButton" class="main-btn" href="https://lornias.github.io/disaster-assembly-map/" target="_blank">
 Find Nearest Safe Area →
 </a>
 
-<a id="qrButton" class="main-btn qr-btn" href="https://lornias.github.io/disaster-assembly-map/" target="_blank">
-QR Emergency Access →
-</a>
+<div class="qr-box">
+<p id="qrText">Scan QR code for instant emergency access</p>
+<img src="resimler/qr.png" alt="QR Code">
+</div>
 </div>
 </header>
 
@@ -349,7 +373,7 @@ en: {
 mainTitle: "Natural Disaster Awareness",
 mainSubtitle: "Understanding risks. Learning from real events. Staying prepared.",
 mapButton: "Find Nearest Safe Area →",
-qrButton: "QR Emergency Access →",
+qrText: "Scan QR code for instant emergency access",
 safeTitle: "BE PREPARED, STAY SAFE!",
 safeText: "A fast, multilingual guidance system for foreign visitors during disasters in Turkey.",
 stepsTitle: "What Should You Do?",
@@ -379,7 +403,7 @@ tr: {
 mainTitle: "Doğal Afet Farkındalığı",
 mainSubtitle: "Riskleri anla. Gerçek olaylardan öğren. Hazırlıklı kal.",
 mapButton: "En Yakın Güvenli Alanı Bul →",
-qrButton: "QR ile Acil Erişim →",
+qrText: "Acil erişim için QR kodu okut",
 safeTitle: "HAZIR OL, GÜVENDE KAL!",
 safeText: "Türkiye’deki yabancı ziyaretçiler için hızlı ve çok dilli afet rehber sistemi.",
 stepsTitle: "Ne Yapmalısın?",
@@ -409,7 +433,7 @@ ar: {
 mainTitle: "التوعية بالكوارث الطبيعية",
 mainSubtitle: "افهم المخاطر. تعلم من الأحداث الحقيقية. كن مستعدًا.",
 mapButton: "ابحث عن أقرب منطقة آمنة →",
-qrButton: "وصول طارئ عبر QR →",
+qrText: "امسح رمز QR للوصول السريع في الطوارئ",
 safeTitle: "كن مستعدًا، ابقَ آمنًا!",
 safeText: "نظام إرشاد سريع ومتعدد اللغات للزوار الأجانب أثناء الكوارث في تركيا.",
 stepsTitle: "ماذا يجب أن تفعل؟",
